@@ -21,4 +21,7 @@ public class EmployeeService {
     public Employee getEmplyoeeById(String id){
         return employeeRepository.getEmplyoeeById(id);
     }
+    public List<Employee> getEmployeeWithParams(String firstName , String lastName){
+        return employeeRepository.getEmployeeWithParams(firstName,lastName);
+    }
 }

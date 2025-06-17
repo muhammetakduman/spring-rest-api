@@ -28,10 +28,10 @@ public class RestEmployeeController {
         return employeeService.getEmplyoeeById(id);
     }
 
-    @GetMapping(path = "employee-list-with-params")
-    public List<Employee> getEmployeeWithParams(@RequestParam(name = "firstName") String firstName,
-                                                @RequestParam(name ="lastName") String lastName){
-        return null;
+    @GetMapping(path = "/with-params")
+    public List<Employee> getEmployeeWithParams(@RequestParam(name = "firstName",required = false) String firstName,
+                                                @RequestParam(name ="lastName" ,required = false) String lastName){
+        return employeeService.getEmployeeWithParams(firstName,lastName);
     }
 
 }
