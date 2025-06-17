@@ -2,6 +2,7 @@ package com.muhammetakduman.controller;
 
 
 import com.muhammetakduman.model.Employee;
+import com.muhammetakduman.model.UpdateEmployeeRequest;
 import com.muhammetakduman.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -47,6 +48,13 @@ public class RestEmployeeController {
         }
         return true;
     }
+
+    @PutMapping(path = "/update-employee/{id}")
+    public Employee updateEmployee(@PathVariable(name = "id") String id , @RequestBody UpdateEmployeeRequest request){
+        return employeeService.updateEmployee(id, request);
+    }
+
+
 
 
 }
