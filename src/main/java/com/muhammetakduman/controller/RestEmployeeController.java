@@ -34,4 +34,19 @@ public class RestEmployeeController {
         return employeeService.getEmployeeWithParams(firstName,lastName);
     }
 
+    @PostMapping(path = "/save-employee")
+    public Employee saveEmployee(@RequestBody Employee newEmployee){
+        return employeeService.saveEmployee(newEmployee);
+    }
+
+
+    @DeleteMapping(path = "/delete-employee/{id}")
+    public boolean deleteEmployee(@PathVariable(name = "id") String id){
+        if (id !=null){
+            this.employeeService.deleteEmployee(id);
+        }
+        return true;
+    }
+
+
 }
